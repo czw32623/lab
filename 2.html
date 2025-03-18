@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Solver</title>
+    <script>
+
+        let a = parseFloat(prompt("Enter coefficient a (a > 0):"));
+        let b = parseFloat(prompt("Enter coefficient b:"));
+        let c = parseFloat(prompt("Enter coefficient c:"));
+
+
+        if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0) {
+            alert("Invalid input! Please enter valid numbers and ensure a > 0.");
+            console.error("Invalid input detected.");
+        } else {
+
+            let delta = b * b - 4 * a * c;
+
+  
+            if (delta < 0) {
+                alert("No real solutions exist (delta < 0).");
+                console.log("No real solutions.");
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+
+                alert(`Roots of the equation are:\n x1 = ${x1} \n x2 = ${x2}`);
+
+
+                console.log(`Roots of the equation: x1 = ${x1}, x2 = ${x2}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Open the browser console to see results.</h2>
+</body>
+</html>
